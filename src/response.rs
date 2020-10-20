@@ -90,10 +90,11 @@ pub struct GameEventDTO {
     pub id: i32,
     pub game_id: i32,
     pub user_id: String,
+    pub user_name: String,
     pub event_type: String,
     pub question_id: Option<i32>,
     pub score_percentage: Option<i32>,
-    pub time_stamp: i64
+    pub timestamp: i64
 }
 
 #[derive(Serialize, Deserialize, Debug)]
