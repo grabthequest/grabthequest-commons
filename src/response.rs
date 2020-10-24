@@ -1,4 +1,6 @@
 use serde::{Serialize, Deserialize};
+use std::cmp::Ordering;
+use std::collections::BTreeSet;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
@@ -102,4 +104,43 @@ pub struct GameEventDTO {
 pub struct GameEventResponseDTO {
     pub data: Option<Vec<GameEventDTO>>,
     pub error: Option<ErrorDTO>
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct ProblemDTO {
+    pub id: i32,
+    pub title: String,
+    pub description: String,
+    pub test_cases: BTreeSet<TestCaseDTO>
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct TestCaseDTO {
+    pub id: i32,
+    pub problem_id: i32,
+    pub seq_no: i32,
+    pub input: String,
+    pub output: String
+}
+
+impl PartialEq for TestCaseDTO {
+    fn eq(&self, other: &TestCaseDTO) -> bool {
+        return self.id == other.id;
+    }
+}
+
+impl Eq for TestCaseDTO {}
+
+impl PartialOrd for TestCaseDTO {
+    fn partial_cmp(&self, other: &TestCaseDTO) -> Option<Ordering> {
+        return Some(self.cmp(other));
+    }
+}
+
+impl Ord for TestCaseDTO {
+    fn cmp(&self, other: &TestCaseDTO) -> Ordering {
+        return self.seq_no.cmp(&other.seq_no);
+    }
 }
