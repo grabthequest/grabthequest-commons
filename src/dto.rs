@@ -90,7 +90,7 @@ pub struct GameEventDTO {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct ProblemDTO {
-    pub id: i32,
+    pub id: Option<i32>,
     pub title: String,
     pub description: String,
     pub timeout: i32,
@@ -100,8 +100,8 @@ pub struct ProblemDTO {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct TestCaseDTO {
-    pub id: i32,
-    pub problem_id: i32,
+    pub id: Option<i32>,
+    pub problem_id: Option<i32>,
     pub seq_no: i32,
     pub input: String,
     pub output: String
