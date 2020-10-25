@@ -23,12 +23,6 @@ pub struct RegisterResponseDTO {
     pub error: Option<ErrorDTO>
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone, Copy)]
-#[serde(rename_all = "camelCase")]
-pub struct GameDTO {
-    pub id: i32
-}
-
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CreateGameResponseDTO {

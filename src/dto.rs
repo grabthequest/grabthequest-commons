@@ -46,6 +46,12 @@ pub struct UserQueryDTO {
     pub user: UserDTO
 }
 
+#[derive(Serialize, Deserialize, Debug, Clone, Copy)]
+#[serde(rename_all = "camelCase")]
+pub struct GameDTO {
+    pub id: i32
+}
+
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct GameEventDTO {
