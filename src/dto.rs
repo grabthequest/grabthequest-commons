@@ -4,6 +4,28 @@ use std::collections::BTreeSet;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
+pub struct RegisterDTO {
+    pub full_name: String,
+    pub email: String,
+    pub password: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct FusionAuthRegistrationAdditionDTO {
+    pub application_id: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct FusionAuthUserRegistrationDTO {
+    pub full_name: String,
+    pub email: String,
+    pub password: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct FusionAuthLoginResponseDTO {
     pub token: String,
     pub user: UserDTO
