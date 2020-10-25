@@ -93,6 +93,7 @@ pub struct ProblemDTO {
     pub id: i32,
     pub title: String,
     pub description: String,
+    pub timeout: i32,
     pub test_cases: BTreeSet<TestCaseDTO>
 }
 
