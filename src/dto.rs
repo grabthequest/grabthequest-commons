@@ -1,6 +1,5 @@
 use serde::{Serialize, Deserialize};
 use std::cmp::Ordering;
-use std::collections::BTreeSet;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
@@ -94,7 +93,7 @@ pub struct ProblemDTO {
     pub title: String,
     pub description: String,
     pub timeout: i32,
-    pub test_cases: BTreeSet<TestCaseDTO>
+    pub test_cases: Vec<TestCaseDTO>
 }
 
 #[derive(Serialize, Deserialize, Debug)]
