@@ -45,6 +45,13 @@ pub struct GameEventResponseDTO {
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
+pub struct GetProblemResponseDTO {
+    pub data: Option<ProblemDTO>,
+    pub error: Option<ErrorDTO>
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct GetProblemsResponseDTO {
     pub data: Option<Vec<ProblemDTO>>,
     pub error: Option<ErrorDTO>
