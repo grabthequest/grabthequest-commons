@@ -88,6 +88,22 @@ pub struct GameEventDTO {
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
+pub struct LanguageDTO {
+    pub id: i32,
+    pub name: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct ProblemViewDTO {
+    pub id: i32,
+    pub title: String,
+    pub description: String,
+    pub languages: Vec<LanguageDTO>
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct ProblemDTO {
     pub id: Option<i32>,
     pub title: String,
