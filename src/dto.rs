@@ -48,7 +48,6 @@ pub struct RegistrationDTO {
     pub insert_instant: u64,
     pub last_login_instant: u64,
     pub last_update_instant: u64,
-    pub timezone: String,
     pub username_status: String,
     pub verified: bool
 }
