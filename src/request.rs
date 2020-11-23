@@ -32,3 +32,18 @@ pub struct FusionAuthRegisterRequestDTO {
 pub struct CreateProblemRequestDTO {
     pub problem: ProblemDTO
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct SubmitCodeRequestDTO {
+    pub code: String,
+    pub language_id: u32
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct Judge0SubmissionRequestDTO {
+    pub source_code: String,
+    pub language_id: u32,
+    pub stdin: String,
+    pub expected_output: String
+}
