@@ -140,3 +140,17 @@ impl Ord for TestCaseDTO {
         return self.seq_no.cmp(&other.seq_no);
     }
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct TestCaseSubmissionDTO {
+    pub seq_no: i32,
+    pub submission_id: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct CodeSubmissionDTO {
+    pub game_id: i32,
+    pub submissions: Vec<TestCaseSubmissionDTO>
+}
