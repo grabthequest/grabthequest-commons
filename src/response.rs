@@ -58,6 +58,27 @@ pub struct GetProblemsResponseDTO {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+pub struct SubmissionTokenResponseDTO {
+    pub token: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct SubmissionStatusResponseDTO {
+    pub id: u16,
+    pub description: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct SubmissionDetailResponseDTO {
+    pub token: String,
+    pub stdout: String,
+    pub time: String,
+    pub memory: u32,
+    pub message: String,
+    pub status: SubmissionStatusResponseDTO
+}
+
+#[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CodeSubmissionResponseDTO {
     pub data: Option<CodeSubmissionDTO>,
