@@ -80,7 +80,7 @@ pub struct GameEventDTO {
     pub user_id: String,
     pub user_name: String,
     pub event_type: String,
-    pub question_id: Option<i32>,
+    pub problem_seq_no: Option<i32>,
     pub score_percentage: Option<i32>,
     pub timestamp: i64
 }
@@ -153,4 +153,30 @@ pub struct TestCaseSubmissionDTO {
 pub struct CodeSubmissionDTO {
     pub game_id: i32,
     pub submissions: Vec<TestCaseSubmissionDTO>
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct SubmissionTokenResponseDTO {
+    pub token: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct SubmissionStatusResponseDTO {
+    pub id: u16,
+    pub description: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct SubmissionDetailResponseDTO {
+    pub token: String,
+    pub stdout: String,
+    pub time: String,
+    pub memory: u32,
+    pub message: String,
+    pub status: SubmissionStatusResponseDTO
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct BatchSubmissionsDetailResponseDTO {
+    pub submissions: Vec<SubmissionDetailResponseDTO>
 }
