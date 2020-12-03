@@ -180,3 +180,10 @@ pub struct SubmissionDetailResponseDTO {
 pub struct BatchSubmissionsDetailResponseDTO {
     pub submissions: Vec<SubmissionDetailResponseDTO>
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct TestCaseResultDTO {
+    pub seq_no: i32,
+    pub submission_detail: SubmissionDetailResponseDTO
+}
