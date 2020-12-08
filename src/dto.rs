@@ -169,10 +169,6 @@ pub struct SubmissionStatusResponseDTO {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct SubmissionDetailResponseDTO {
     pub token: String,
-    pub stdout: String,
-    pub time: String,
-    pub memory: u32,
-    pub message: String,
     pub status: SubmissionStatusResponseDTO
 }
 
