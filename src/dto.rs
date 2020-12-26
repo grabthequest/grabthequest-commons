@@ -81,7 +81,6 @@ pub struct GameEventDTO {
     pub user_name: String,
     pub event_type: String,
     pub problem_seq_no: Option<i32>,
-    pub score_percentage: Option<i32>,
     pub timestamp: i64
 }
 
