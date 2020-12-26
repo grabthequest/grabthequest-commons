@@ -70,3 +70,10 @@ pub struct GetSubmissionResultsResponseDTO {
     pub data: Option<Vec<TestCaseResultDTO>>,
     pub error: Option<ErrorDTO>
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct GetGamePlayersResponseDTO {
+    pub data: Option<Vec<GamePlayerDTO>>,
+    pub error: Option<ErrorDTO>
+}

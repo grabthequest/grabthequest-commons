@@ -182,3 +182,13 @@ pub struct TestCaseResultDTO {
     pub seq_no: i32,
     pub submission_detail: SubmissionDetailResponseDTO
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct GamePlayerDTO {
+    pub id: i32,
+    pub game_id: i32,
+    pub user_id: String,
+    pub major_score: i32,
+    pub minor_score: i32
+}
