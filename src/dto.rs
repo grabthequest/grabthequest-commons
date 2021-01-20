@@ -192,3 +192,9 @@ pub struct GamePlayerDTO {
     pub major_score: i32,
     pub minor_score: i32
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct TimestampDTO {
+    pub timestamp: i64
+}

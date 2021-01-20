@@ -77,3 +77,10 @@ pub struct GetGamePlayersResponseDTO {
     pub data: Option<Vec<GamePlayerDTO>>,
     pub error: Option<ErrorDTO>
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct GetTimestampResponseDTO {
+    pub data: Option<TimestampDTO>,
+    pub error: Option<ErrorDTO>
+}
