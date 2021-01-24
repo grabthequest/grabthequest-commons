@@ -4,6 +4,12 @@ use crate::dto::*;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
+pub struct GenericResponseDTO {
+    pub error: Option<ErrorDTO>
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct LoginResponseDTO {
     pub data: Option<FusionAuthLoginResponseDTO>,
     pub error: Option<ErrorDTO>
@@ -27,12 +33,6 @@ pub struct RegisterResponseDTO {
 #[serde(rename_all = "camelCase")]
 pub struct CreateGameResponseDTO {
     pub data: Option<GameDTO>,
-    pub error: Option<ErrorDTO>
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "camelCase")]
-pub struct JoinGameResponseDTO {
     pub error: Option<ErrorDTO>
 }
 
@@ -75,12 +75,5 @@ pub struct GetSubmissionResultsResponseDTO {
 #[serde(rename_all = "camelCase")]
 pub struct GetGamePlayersResponseDTO {
     pub data: Option<Vec<GamePlayerDTO>>,
-    pub error: Option<ErrorDTO>
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "camelCase")]
-pub struct GetTimestampResponseDTO {
-    pub data: Option<TimestampDTO>,
     pub error: Option<ErrorDTO>
 }
