@@ -150,8 +150,7 @@ pub struct TestCaseSubmissionDTO {
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct CodeSubmissionDTO {
-    pub game_id: i32,
-    pub submissions: Vec<TestCaseSubmissionDTO>
+    pub code_submission_id: i32
 }
 
 #[derive(Serialize, Deserialize, Debug)]
