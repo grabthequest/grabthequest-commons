@@ -47,5 +47,6 @@ pub struct Judge0SubmissionRequestDTO {
     pub stdin: String,
     pub expected_output: String,
     pub cpu_time_limit: f32,
-    pub cpu_extra_time: f32, // always 0.5 s
+    pub cpu_extra_time: f32, // always 0.5 s,
+    pub callback_url: String
 }
