@@ -191,3 +191,13 @@ pub struct GamePlayerDTO {
     pub major_score: i32,
     pub minor_score: i32
 }
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct SubmissionEventDTO {
+    pub id: i32,
+    pub code_submission_id: i32,
+    pub code_submission_token_id: i32,
+    pub status: String,
+    pub time_stamp: i64
+}
