@@ -199,5 +199,5 @@ pub struct SubmissionEventDTO {
     pub code_submission_id: i32,
     pub code_submission_token_id: i32,
     pub status: String,
-    pub time_stamp: i64
+    pub timestamp: i64
 }
